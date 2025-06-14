@@ -1,0 +1,31 @@
+TalkScale/
+├── TalkScale-api/                  <-- API Gateway Layer (entrypoint for clients)
+│   ├── config/                     <-- Spring Security config, CORS, OAuth2 setup
+│   ├── controller/                <-- Delegates requests to downstream services
+│   ├── filter/                     <-- JWT filter, logging, rate limiting
+│   ├── service/                    <-- API Gateway services (proxy, token decode, etc.)
+│   └── util/                       <-- Utility classes: JWT, token decoder
+│
+├── TalkScale-user-service/        <-- Handles registration, login, profile, roles, OAuth, OTP
+│   ├── controller/                <-- User-facing APIs
+│   ├── service/                   <-- AuthService, OtpService, OAuth2Service
+│   ├── dto/                       <-- LoginRequest, RegisterRequest, etc.
+│   ├── entity/                    <-- AppUser, Role, OtpRecord
+│   ├── config/                    <-- Local security config if needed
+│   ├── repository/                <-- UserRepository
+│   └── util/                      <-- JwtUtil, OtpGenerator, OAuth2UserFactory
+│
+├── TalkScale-chat-service/        <-- Messaging system (1:1, delivery status, etc.)
+├── TalkScale-media-service/       <-- File/image/video storage and retrieval
+├── TalkScale-meeting-service/     <-- Audio/video calling & group meetings (WebRTC, SFU integration)
+│
+├── TalkScale-common/              <-- Shared DTOs, enums, exceptions, constants
+│   ├── dto/
+│   ├── exception/
+│   ├── enums/
+│   └── util/
+│
+└── pom.xml                        <-- Parent POM with modules
+
+
+openssl rand -base64 64
