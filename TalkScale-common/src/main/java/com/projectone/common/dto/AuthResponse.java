@@ -1,4 +1,4 @@
-package com.projectone.user.dto;
+package com.projectone.common.dto;
 
 
 

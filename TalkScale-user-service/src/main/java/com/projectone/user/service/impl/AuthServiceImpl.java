@@ -1,11 +1,11 @@
 package com.projectone.user.service.impl;
 
-import com.projectone.user.dto.LoginRequest;
-import com.projectone.user.dto.RegisterRequest;
+import com.projectone.common.dto.LoginRequest;
+import com.projectone.common.dto.RegisterRequest;
+import com.projectone.common.util.JwtUtil;
 import com.projectone.user.entity.AppUser;
 import com.projectone.user.repository.IUserRepository;
 import com.projectone.user.service.IAuthService;
-import com.projectone.user.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,7 +13,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 
 import java.util.Map;
 

@@ -1,9 +1,9 @@
-package com.projectone.user.controller;
+package com.projectone.common.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.projectone.user.config.AuthTestConfig;
-import com.projectone.user.dto.LoginRequest;
-import com.projectone.user.dto.RegisterRequest;
+import com.projectone.common.config.AuthTestConfig;
+import com.projectone.common.dto.LoginRequest;
+import com.projectone.common.dto.RegisterRequest;
 import com.projectone.user.service.IAuthService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

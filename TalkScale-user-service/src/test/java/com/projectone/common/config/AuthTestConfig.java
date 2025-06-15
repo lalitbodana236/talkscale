@@ -1,7 +1,7 @@
-package com.projectone.user.config;
+package com.projectone.common.config;
 
 import com.projectone.user.service.IAuthService;
-import com.projectone.user.util.JwtUtil;
+import com.projectone.common.util.JwtUtil;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;

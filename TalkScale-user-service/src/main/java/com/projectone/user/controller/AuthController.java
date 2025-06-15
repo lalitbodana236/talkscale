@@ -1,7 +1,7 @@
 package com.projectone.user.controller;
 
-import com.projectone.user.dto.LoginRequest;
-import com.projectone.user.dto.RegisterRequest;
+import com.projectone.common.dto.LoginRequest;
+import com.projectone.common.dto.RegisterRequest;
 import com.projectone.user.service.IAuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

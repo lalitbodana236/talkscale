@@ -1,7 +1,7 @@
 package com.projectone.user.service;
 
-import com.projectone.user.dto.LoginRequest;
-import com.projectone.user.dto.RegisterRequest;
+import com.projectone.common.dto.LoginRequest;
+import com.projectone.common.dto.RegisterRequest;
 
 import java.util.Map;
 

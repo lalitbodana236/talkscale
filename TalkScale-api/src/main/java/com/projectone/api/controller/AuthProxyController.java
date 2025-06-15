@@ -16,13 +16,17 @@ public class AuthProxyController {
     
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Object request) {
+        System.out.println("inside api gateway login "+request);
         String url = "http://localhost:8081/api/v1/auth/login"; // user-service port
+        System.out.println("inside api gateway login "+url);
         return restTemplate.postForEntity(url, request, Object.class);
     }
     
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Object request) {
+        System.out.println("inside api gateway register "+request);
         String url = "http://localhost:8081/api/v1/auth/register";
+        System.out.println("inside api gateway register "+url);
         return restTemplate.postForEntity(url, request, Object.class);
     }
 }
