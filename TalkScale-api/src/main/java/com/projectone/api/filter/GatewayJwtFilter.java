@@ -1,17 +1,6 @@
 package com.projectone.api.filter;
 
 
-
-
-import com.projectone.common.util.JwtUtil;
-import jakarta.servlet.*;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
-import java.io.IOException;
-
-
 import com.projectone.common.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
@@ -66,6 +55,9 @@ public class GatewayJwtFilter extends OncePerRequestFilter {
         
         // Optionally: set for internal use
         request.setAttribute("username", username);
+        request.setAttribute("user", username);
+        response.setHeader("X-User", username);
+        
         
         System.out.println("inside GatewayJwtFilter username "+username);
         filterChain.doFilter(request, response);

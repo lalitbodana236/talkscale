@@ -1,14 +1,10 @@
 package com.projectone.api.client;
 
 
-
-
 import com.projectone.api.config.FeignClientInterceptor;
-import com.projectone.common.dto.RegisterRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(
         name = "talkscale-user-service",
@@ -17,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 )
 public interface UserServiceClient {
     
-    @PostMapping("/api/v1/auth/register")
-    ResponseEntity<?> register(@RequestBody RegisterRequest request);
+    
+    @GetMapping("/api/v1/user/findAll")
+    ResponseEntity<?> findALl();
 }
 

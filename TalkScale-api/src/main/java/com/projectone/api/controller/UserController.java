@@ -1,6 +1,6 @@
-package com.projectone.user.controller;
+package com.projectone.api.controller;
 
-import com.projectone.user.service.IUserService;
+import com.projectone.api.client.UserServiceClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
     
-    private final IUserService userService;
+    private final UserServiceClient userAuthClient;
     
     @GetMapping("/findAll")
     public ResponseEntity<?> findAll() {
-        return ResponseEntity.ok(userService.findAll());
+        System.out.println("Forwarding findAll to user-service");
+        return userAuthClient.findALl();
     }
 }
