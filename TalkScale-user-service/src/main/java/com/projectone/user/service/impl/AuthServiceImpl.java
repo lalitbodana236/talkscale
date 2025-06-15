@@ -4,6 +4,7 @@ import com.projectone.common.dto.LoginRequest;
 import com.projectone.common.dto.RegisterRequest;
 import com.projectone.common.util.JwtUtil;
 import com.projectone.user.entity.AppUser;
+import com.projectone.user.entity.Role;
 import com.projectone.user.repository.IUserRepository;
 import com.projectone.user.service.IAuthService;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,14 @@ public class AuthServiceImpl implements IAuthService {
             AppUser user = AppUser.builder()
                                    .email(request.getEmail())
                                    .password(passwordEncoder.encode(request.getPassword()))
-                                   .fullName(request.getFullName())
+                                   .firstname(request.getFirstname())
+                                   .lastname(request.getLastname())
+                                   .username(request.getUsername())
+                                   .mobile(request.getMobile())
+                                   .enabled(true)
+                                   .role(Role.USER)
+                                   .emailVerified(false)
+                                   .mobileVerified(false)
                                    .build();
             userRepository.save(user);
             
